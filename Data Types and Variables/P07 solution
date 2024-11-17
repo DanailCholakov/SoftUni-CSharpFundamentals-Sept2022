@@ -1,0 +1,38 @@
+/*
+You have a water tank with a capacity of 255 liters.
+On the next n lines, you will receive liters of water, which you have to pour into your tank.
+If the capacity is not enough, print "Insufficient capacity!" and continue reading the next line.
+On the last line, print the liters in the tank.
+*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int capacity = 0;
+            const int maxCapacity = 255;
+            for (int i = 0; i < n; i++)
+            {
+                int liters = int.Parse(Console.ReadLine());
+                if (capacity + liters > maxCapacity)
+                {
+                    Console.WriteLine("Insufficient capacity!");
+                }
+                else
+                {
+                    capacity += liters;
+                }
+                Console.WriteLine(capacity);
+            }
+        }
+    }
+}
