@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int pokePower = int.Parse(Console.ReadLine());
+            int distance = int.Parse(Console.ReadLine());
+            int exhaustionFactor = int.Parse(Console.ReadLine());
+            int targets = 0;
+
+            int originalPokePower = pokePower;
+
+            while (pokePower >= distance)
+            {
+
+                pokePower -= distance;
+                targets++;
+
+                if ((double)pokePower == (double)originalPokePower * 0.5)
+                {
+                    if (pokePower / exhaustionFactor > 0)
+                    {
+                        pokePower /= exhaustionFactor;
+
+                    }
+                   
+                }
+
+            }
+            Console.WriteLine($"{pokePower}");
+            Console.WriteLine($"{targets}");
+        }
+    }
+}
