@@ -1,0 +1,44 @@
+/*
+Create a program, which calculates the volume of n beer kegs. You will receive in total 3 * n lines.
+Every three lines will hold information for a single keg. 
+First up is the model of the keg, after that is the radius of the keg, and lastly is the height of the keg.
+Calculate the volume using the following formula: π * r^2 * h.
+In the end, print the model of the biggest keg
+*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int beer = int.Parse(Console.ReadLine());
+            double maxvolume = 0;
+            string best = string.Empty;
+            for (int i = 0; i < beer; i++)
+            {
+                Console.WriteLine("model");
+                string model = Console.ReadLine();
+                Console.WriteLine(" radius");
+                double radius = double.Parse(Console.ReadLine());
+                Console.WriteLine("height");
+                int height = int.Parse(Console.ReadLine());
+                double volume = height * radius;
+
+                if (volume > maxvolume)
+                {
+                    maxvolume = volume;
+                    best = model;
+                }
+            }
+            Console.WriteLine($"biggest {best}");
+        }
+    }
+}
