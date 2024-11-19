@@ -1,0 +1,44 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int won = 0;
+            int loses = 0;
+            int draw = 0;
+            
+            for (int i = 0; i < 3; i++)
+            {
+                
+                string[] scores = Console.ReadLine().Split(':');
+                int first = int.Parse(scores[0]);
+                int second = int.Parse(scores[1]);
+                if (first == second)
+                {
+                    draw++;
+                }
+                else if (first < second)
+                {
+                    loses++;
+                }
+                else
+                {
+                    won++;
+                }
+                
+            }
+            Console.WriteLine($"Team won {won} games.");
+            Console.WriteLine($"Team lost {loses} games.");
+            Console.WriteLine($"Drawn games: {draw}");
+        }
+    }
+}
