@@ -1,0 +1,75 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class RockPapperScissors
+    {
+        static void Main(string[] args)
+        {
+            const string rock = "rock";
+            const string papper = "papper";
+            const string scissors = "scissors";
+            Random random = new Random();
+            string computerMove = " ";
+            int computerrandomNumber = random.Next(1, 4);
+            Console.WriteLine("Choose [r]ock [p]apper [s]cissors");
+            string playerMove =Console.ReadLine();
+            if (playerMove =="s"|| playerMove =="Scissors")
+            {
+                playerMove = scissors;
+            }
+            else if(playerMove =="r" || playerMove == "Rock")
+            {
+                playerMove = rock;
+            }
+            else if (playerMove == "p" || playerMove == "papper")
+            {
+                playerMove = papper;
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input plese select a valid option");
+
+            }
+            switch (computerrandomNumber)
+            {
+                case 1:
+                    computerMove = rock;
+                break;
+
+                case 2:
+                    computerMove= papper;
+                break;
+
+                case 3:
+                    computerMove = scissors;
+
+                break;
+                    
+            }
+            Console.WriteLine($"the computer choose {computerMove}");
+            if ((computerMove == rock && playerMove == papper) ||
+                    (playerMove == scissors && computerMove == papper) ||
+                (playerMove == rock && computerMove == scissors))
+            {
+                Console.WriteLine("You win");
+            }
+            else if ((computerMove == rock && playerMove == scissors) ||
+                (computerMove == scissors && playerMove == papper) ||
+                (computerMove == papper  && playerMove == rock))
+            {
+                Console.WriteLine("You lose");
+            }
+            else
+            {
+                Console.WriteLine("the game is draw");
+            }
+        }
+    }
+}
