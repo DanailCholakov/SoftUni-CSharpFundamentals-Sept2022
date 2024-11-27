@@ -1,0 +1,35 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class RockPapperScissors
+    {
+        static void Main(string[] args)
+        {
+            //first array
+            string[] firstarray = Console.ReadLine().Split(' ');
+            //second array
+            string[] secondarray = Console.ReadLine().Split(' ');
+            //2 for loops to compare the elements in the arrays
+            for (int i = 0; i < firstarray.Length; i++)// changes the index 
+            {
+                for (int j = 0; j < secondarray.Length; j++)// changes the index
+                {
+
+                    if (secondarray[j] == firstarray[i]) // compares them
+                    {
+                        Console.Write(string.Join(" ",secondarray[j]));
+                    }
+                }
+            }
+
+
+        }
+    }
+}
