@@ -1,0 +1,32 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class RockPapperScissors
+    {
+        static void Main(string[] args)
+        {
+            // n number of wagons
+            int n = int.Parse(Console.ReadLine());
+            //people in each wagon
+            int sum = 0;
+            int[] people = new int[n];
+            for (int i = 0; i < people.Length; i++)
+            {
+                int currentnumber = int.Parse(Console.ReadLine());
+                people[i]=currentnumber;
+                sum = sum + people[i];
+            }
+            
+            
+            Console.WriteLine(string.Join(" ", people));
+            Console.WriteLine(sum);
+        }
+    }
+}
