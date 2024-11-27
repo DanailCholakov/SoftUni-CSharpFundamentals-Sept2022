@@ -1,0 +1,47 @@
+//Zig-zag arrays exercise
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace sofuni17._11._24
+{
+    internal class RockPapperScissors
+    {
+        static void Main(string[] args)
+        {
+            //creating a variable which will determine the size of the arrays
+            int n = int.Parse(Console.ReadLine());
+            //creating two arrays
+            int[] firstarray = new int[n];
+            int [] secondarray = new int[n];    
+            //a for loop to do the operation n times
+            for (int i = 0; i < n; i++)
+            {
+                int[] number = Console.ReadLine()
+                    .Split(' ')
+                    .Select(int.Parse)
+                    .ToArray();
+                int firstNumb = number[0];
+                int secondNumb = number[1];
+                if (i % 2 == 0)
+                {
+                    firstarray[i] = secondNumb;
+                    secondarray[i] = firstNumb;  
+                   
+                }
+                else
+                {
+                    firstarray[i] = firstNumb;
+                    secondarray[i] = secondNumb;
+                   
+                }
+            }
+
+            Console.WriteLine(string.Join(" ", firstarray));
+            Console.WriteLine(string.Join(" ", secondarray));
+        }
+    }
+}
