@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace softuni_7._12._2024
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = Console.ReadLine()
+                 .Split(' ')
+                 .Select(int.Parse)
+                 .ToArray();
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                int currNum = numbers[i];
+                int j;
+
+          
+                for (j = i + 1; j < numbers.Length; j++)
+                {
+                    if (numbers[j] >= currNum)
+                    {
+                        break;
+                    }
+                }
+
+               
+                if (j == numbers.Length)
+                {
+                    Console.Write(currNum + " ");
+                }
+            }
+        }
+    }
+}
