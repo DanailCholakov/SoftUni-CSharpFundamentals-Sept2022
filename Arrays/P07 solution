@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace softuni_7._12._2024
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] array1 = new int[n];
+            int sum = 0;
+            List<int> list = new List<int>();
+            for (int i = 0; i < n; i++)
+            {
+                
+                int number = int.Parse(Console.ReadLine());
+                list.Add(number);
+                sum = sum + number;
+                
+            }
+            foreach (int numberi in list)
+            {
+                Console.Write(string.Join(" ",numberi,"\n"));
+              
+            }
+            Console.WriteLine(sum);
+
+        }
+
+
+    }
+}
