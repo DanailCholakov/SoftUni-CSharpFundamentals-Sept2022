@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace softuni2025
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+                List<int> wagons = new List<int>();
+            wagons = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+            int max = int.Parse(Console.ReadLine());
+            string command = Console.ReadLine();
+            string[] input = command
+                    .Split(' '); 
+            while (command != "end")
+            {
+               
+
+                if (input[0] == "Add")
+                {
+                    wagons.Add(int.Parse(input[1]));
+                }
+                else
+                {
+                    int passengersToFit = int.Parse(input[0]);
+
+                    for (int i = 0; i < wagons.Count; i++)
+                    {
+                        if (wagons[i] + passengersToFit <= max)
+                        {
+                            wagons[i] += passengersToFit;
+                            break; 
+                        }
+        
+                    }
+                }
+                command = Console.ReadLine();
+                input = command .Split(' ');
+            }
+            Console.WriteLine(string.Join(" ", wagons));
+        }
+    }
+}
+
