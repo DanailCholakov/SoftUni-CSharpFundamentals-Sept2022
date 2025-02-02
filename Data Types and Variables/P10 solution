@@ -40,3 +40,29 @@ namespace sofuni17._11._24
         }
     }
 }
+
+//Update
+int power = int.Parse(Console.ReadLine());
+int distance = int.Parse(Console.ReadLine());
+int exhaustionFactor = int.Parse(Console.ReadLine());
+int targetCount = 0;
+int halfpower = power / 2;
+for (int i = 0; i < power; i++)
+{
+    if (power == halfpower)
+    {
+        if (power / exhaustionFactor > 0 )
+        {
+            power /= exhaustionFactor;
+        }
+    }
+   if (power >= distance)
+    {
+        power -= distance;
+        targetCount++;
+    }
+}
+Console.WriteLine($"{power}");
+Console.WriteLine($"{targetCount}");
+
+
