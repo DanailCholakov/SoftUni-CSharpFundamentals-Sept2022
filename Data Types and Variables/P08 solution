@@ -17,7 +17,7 @@ for (int i = 0; i < beer; i++)
     double radius = double.Parse(Console.ReadLine());
     Console.WriteLine("height");
     int height = int.Parse(Console.ReadLine());
-    double volume = Math.PI * Math.Pow(2, radius) * height;
+    double volume = Math.PI * Math.Pow(radius,2) * height;
     if (volume > maxvolume)
     {
         maxvolume = volume;
